@@ -4,7 +4,7 @@
 
 package v1alpha1
 
-import appsv1 "github.com/apecloud/kubeblocks/apis/apps/v1"
+import appsv1 "github.com/cjc7373/kubeblocks-cue/apis/apps/v1"
 
 // PodSelectionPolicy pod selection strategy.
 // +enum

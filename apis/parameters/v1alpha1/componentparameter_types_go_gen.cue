@@ -6,7 +6,7 @@ package v1alpha1
 
 import (
 	metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
-	appsv1 "github.com/apecloud/kubeblocks/apis/apps/v1"
+	appsv1 "github.com/cjc7373/kubeblocks-cue/apis/apps/v1"
 )
 
 // ComponentParameter is the Schema for the componentparameters API

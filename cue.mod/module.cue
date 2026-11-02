@@ -1,4 +1,4 @@
-module: "github.com/apecloud/kubeblocks"
+module: "github.com/cjc7373/kubeblocks-cue"
 language: {
 	version: "v0.17.1"
 }

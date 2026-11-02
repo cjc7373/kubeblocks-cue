@@ -7,9 +7,9 @@ package v1alpha1
 import (
 	corev1 "cue.dev/x/k8s.io/api/core/v1"
 	"cue.dev/x/k8s.io/apimachinery/pkg/api/resource"
-	appsv1 "github.com/apecloud/kubeblocks/apis/apps/v1"
+	appsv1 "github.com/cjc7373/kubeblocks-cue/apis/apps/v1"
 	"cue.dev/x/k8s.io/apimachinery/pkg/util/intstr"
-	dpv1alpha1 "github.com/apecloud/kubeblocks/apis/dataprotection/v1alpha1"
+	dpv1alpha1 "github.com/cjc7373/kubeblocks-cue/apis/dataprotection/v1alpha1"
 	metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

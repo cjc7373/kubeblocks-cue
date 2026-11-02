@@ -8,7 +8,7 @@ import (
 	metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 	corev1 "cue.dev/x/k8s.io/api/core/v1"
 	"cue.dev/x/k8s.io/apimachinery/pkg/util/intstr"
-	dpv1alpha1 "github.com/apecloud/kubeblocks/apis/dataprotection/v1alpha1"
+	dpv1alpha1 "github.com/cjc7373/kubeblocks-cue/apis/dataprotection/v1alpha1"
 )
 
 // Cluster offers a unified management interface for a wide variety of database and storage systems:
