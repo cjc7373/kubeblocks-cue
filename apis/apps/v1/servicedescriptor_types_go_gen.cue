@@ -14,7 +14,8 @@ import (
 // To enable a Cluster to access this service, the ServiceDescriptor's name should be specified
 // in the Cluster configuration under `clusterComponent.serviceRefs[*].serviceDescriptor`.
 #ServiceDescriptor: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ServiceDescriptor"
 	metadata?: metav1.#ObjectMeta       @go(ObjectMeta)
 	spec?:     #ServiceDescriptorSpec   @go(Spec)
 	status?:   #ServiceDescriptorStatus @go(Status)
@@ -22,7 +23,8 @@ import (
 
 // ServiceDescriptorList contains a list of ServiceDescriptor.
 #ServiceDescriptorList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ServiceDescriptorList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ServiceDescriptor] @go(Items,[]ServiceDescriptor)
 }

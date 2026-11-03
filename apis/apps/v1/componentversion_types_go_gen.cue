@@ -8,7 +8,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ComponentVersion is the Schema for the componentversions API
 #ComponentVersion: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ComponentVersion"
 	metadata?: metav1.#ObjectMeta      @go(ObjectMeta)
 	spec?:     #ComponentVersionSpec   @go(Spec)
 	status?:   #ComponentVersionStatus @go(Status)
@@ -16,7 +17,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ComponentVersionList contains a list of ComponentVersion
 #ComponentVersionList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ComponentVersionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ComponentVersion] @go(Items,[]ComponentVersion)
 }

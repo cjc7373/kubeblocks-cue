@@ -12,7 +12,8 @@ import (
 
 // ParametersDefinition is the Schema for the parametersdefinitions API
 #ParametersDefinition: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ParametersDefinition"
 	metadata?: metav1.#ObjectMeta          @go(ObjectMeta)
 	spec?:     #ParametersDefinitionSpec   @go(Spec)
 	status?:   #ParametersDefinitionStatus @go(Status)
@@ -20,7 +21,8 @@ import (
 
 // ParametersDefinitionList contains a list of ParametersDefinition
 #ParametersDefinitionList: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ParametersDefinitionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ParametersDefinition] @go(Items,[]ParametersDefinition)
 }

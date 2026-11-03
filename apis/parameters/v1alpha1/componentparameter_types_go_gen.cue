@@ -11,7 +11,8 @@ import (
 
 // ComponentParameter is the Schema for the componentparameters API
 #ComponentParameter: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ComponentParameter"
 	metadata?: metav1.#ObjectMeta        @go(ObjectMeta)
 	spec?:     #ComponentParameterSpec   @go(Spec)
 	status?:   #ComponentParameterStatus @go(Status)
@@ -19,7 +20,8 @@ import (
 
 // ComponentParameterList contains a list of ComponentParameter
 #ComponentParameterList: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ComponentParameterList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ComponentParameter] @go(Items,[]ComponentParameter)
 }

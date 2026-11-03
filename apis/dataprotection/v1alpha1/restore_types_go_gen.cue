@@ -471,7 +471,8 @@ import (
 
 // Restore is the Schema for the restores API
 #Restore: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "Restore"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #RestoreSpec       @go(Spec)
 	status?:   #RestoreStatus     @go(Status)
@@ -479,7 +480,8 @@ import (
 
 // RestoreList contains a list of Restore
 #RestoreList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "RestoreList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#Restore] @go(Items,[]Restore)
 }

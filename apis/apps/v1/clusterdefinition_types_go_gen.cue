@@ -17,7 +17,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 // Additionally, ClusterDefinition also specifies the sequence of startup, upgrade, and shutdown between Components and/or Shardings,
 // ensuring a controlled and predictable management of cluster lifecycles.
 #ClusterDefinition: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ClusterDefinition"
 	metadata?: metav1.#ObjectMeta       @go(ObjectMeta)
 	spec?:     #ClusterDefinitionSpec   @go(Spec)
 	status?:   #ClusterDefinitionStatus @go(Status)
@@ -25,7 +26,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ClusterDefinitionList contains a list of ClusterDefinition
 #ClusterDefinitionList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ClusterDefinitionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ClusterDefinition] @go(Items,[]ClusterDefinition)
 }

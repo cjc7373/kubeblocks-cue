@@ -339,7 +339,8 @@ import (
 
 // BackupPolicy is the Schema for the backuppolicies API.
 #BackupPolicy: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupPolicy"
 	metadata?: metav1.#ObjectMeta  @go(ObjectMeta)
 	spec?:     #BackupPolicySpec   @go(Spec)
 	status?:   #BackupPolicyStatus @go(Status)
@@ -347,7 +348,8 @@ import (
 
 // BackupPolicyList contains a list of BackupPolicy
 #BackupPolicyList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupPolicyList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#BackupPolicy] @go(Items,[]BackupPolicy)
 }

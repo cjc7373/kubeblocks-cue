@@ -390,7 +390,8 @@ import (
 
 // Backup is the Schema for the backups API.
 #Backup: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "Backup"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #BackupSpec        @go(Spec)
 	status?:   #BackupStatus      @go(Status)
@@ -398,7 +399,8 @@ import (
 
 // BackupList contains a list of Backup.
 #BackupList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#Backup] @go(Items,[]Backup)
 }

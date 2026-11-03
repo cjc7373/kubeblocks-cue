@@ -113,7 +113,8 @@ import (
 // As for the `datasafed` tool, the specification provides insights on generating the necessary
 // configuration file.
 #StorageProvider: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "StorageProvider"
 	metadata?: metav1.#ObjectMeta     @go(ObjectMeta)
 	spec?:     #StorageProviderSpec   @go(Spec)
 	status?:   #StorageProviderStatus @go(Status)
@@ -121,7 +122,8 @@ import (
 
 // StorageProviderList contains a list of `StorageProvider`.
 #StorageProviderList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "StorageProviderList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#StorageProvider] @go(Items,[]StorageProvider)
 }

@@ -8,7 +8,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ShardingDefinition is the Schema for the shardingdefinitions API
 #ShardingDefinition: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ShardingDefinition"
 	metadata?: metav1.#ObjectMeta        @go(ObjectMeta)
 	spec?:     #ShardingDefinitionSpec   @go(Spec)
 	status?:   #ShardingDefinitionStatus @go(Status)
@@ -16,7 +17,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ShardingDefinitionList contains a list of ShardingDefinition
 #ShardingDefinitionList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ShardingDefinitionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ShardingDefinition] @go(Items,[]ShardingDefinition)
 }

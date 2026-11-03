@@ -1108,7 +1108,8 @@ import (
 
 // OpsRequest is the Schema for the opsrequests API
 #OpsRequest: {
-	metav1.#TypeMeta
+	apiVersion: "operations.kubeblocks.io/v1alpha1"
+	kind:       "OpsRequest"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #OpsRequestSpec    @go(Spec)
 	status?:   #OpsRequestStatus  @go(Status)
@@ -1116,7 +1117,8 @@ import (
 
 // OpsRequestList contains a list of OpsRequest
 #OpsRequestList: {
-	metav1.#TypeMeta
+	apiVersion: "operations.kubeblocks.io/v1alpha1"
+	kind:       "OpsRequestList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#OpsRequest] @go(Items,[]OpsRequest)
 }

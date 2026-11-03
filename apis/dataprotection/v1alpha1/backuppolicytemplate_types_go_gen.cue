@@ -240,7 +240,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 // +kubebuilder:printcolumn:name="STATUS",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 #BackupPolicyTemplate: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupPolicyTemplate"
 
 	// The metadata for the BackupPolicyTemplate object, including name, namespace, labels, and annotations.
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
@@ -254,7 +255,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // BackupPolicyTemplateList contains a list of BackupPolicyTemplate
 #BackupPolicyTemplateList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupPolicyTemplateList"
 
 	// Contains the metadata for the list objects, including the continue and remainingItemCount for the list.
 	metadata?: metav1.#ListMeta @go(ListMeta)

@@ -8,7 +8,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // Parameter is the Schema for the parameters API
 #Parameter: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "Parameter"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #ParameterSpec     @go(Spec)
 	status?:   #ParameterStatus   @go(Status)
@@ -16,7 +17,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ParameterList contains a list of Parameter
 #ParameterList: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ParameterList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#Parameter] @go(Items,[]Parameter)
 }

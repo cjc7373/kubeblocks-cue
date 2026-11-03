@@ -36,7 +36,8 @@ import (
 // Referencing a ComponentDefinition when creating individual Components ensures inheritance of predefined configurations,
 // promoting reusability and consistency across different deployments and cluster topologies.
 #ComponentDefinition: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ComponentDefinition"
 	metadata?: metav1.#ObjectMeta         @go(ObjectMeta)
 	spec?:     #ComponentDefinitionSpec   @go(Spec)
 	status?:   #ComponentDefinitionStatus @go(Status)
@@ -44,7 +45,8 @@ import (
 
 // ComponentDefinitionList contains a list of ComponentDefinition
 #ComponentDefinitionList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ComponentDefinitionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ComponentDefinition] @go(Items,[]ComponentDefinition)
 }

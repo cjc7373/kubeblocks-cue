@@ -154,7 +154,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // BackupSchedule is the Schema for the backupschedules API.
 #BackupSchedule: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupSchedule"
 	metadata?: metav1.#ObjectMeta    @go(ObjectMeta)
 	spec?:     #BackupScheduleSpec   @go(Spec)
 	status?:   #BackupScheduleStatus @go(Status)
@@ -162,7 +163,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // BackupScheduleList contains a list of BackupSchedule.
 #BackupScheduleList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupScheduleList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#BackupSchedule] @go(Items,[]BackupSchedule)
 }

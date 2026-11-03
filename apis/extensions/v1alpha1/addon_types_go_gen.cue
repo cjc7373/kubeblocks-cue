@@ -406,7 +406,8 @@ import (
 
 // Addon is the Schema for the add-ons API.
 #Addon: {
-	metav1.#TypeMeta
+	apiVersion: "extensions.kubeblocks.io/v1alpha1"
+	kind:       "Addon"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #AddonSpec         @go(Spec)
 	status?:   #AddonStatus       @go(Status)
@@ -414,7 +415,8 @@ import (
 
 // AddonList contains a list of add-ons.
 #AddonList: {
-	metav1.#TypeMeta
+	apiVersion: "extensions.kubeblocks.io/v1alpha1"
+	kind:       "AddonList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#Addon] @go(Items,[]Addon)
 }

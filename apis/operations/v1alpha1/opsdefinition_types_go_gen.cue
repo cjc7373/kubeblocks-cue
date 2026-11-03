@@ -467,7 +467,8 @@ import (
 
 // OpsDefinition is the Schema for the OpsDefinitions API.
 #OpsDefinition: {
-	metav1.#TypeMeta
+	apiVersion: "operations.kubeblocks.io/v1alpha1"
+	kind:       "OpsDefinition"
 	metadata?: metav1.#ObjectMeta   @go(ObjectMeta)
 	spec?:     #OpsDefinitionSpec   @go(Spec)
 	status?:   #OpsDefinitionStatus @go(Status)
@@ -475,7 +476,8 @@ import (
 
 // OpsDefinitionList contains a list of OpsDefinition.
 #OpsDefinitionList: {
-	metav1.#TypeMeta
+	apiVersion: "operations.kubeblocks.io/v1alpha1"
+	kind:       "OpsDefinitionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#OpsDefinition] @go(Items,[]OpsDefinition)
 }

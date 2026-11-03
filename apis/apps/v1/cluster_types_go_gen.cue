@@ -36,7 +36,8 @@ import (
 // serves as the central control point, abstracting the complexity of multiple-component management,
 // and providing a unified interface for cluster-wide operations.
 #Cluster: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "Cluster"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #ClusterSpec       @go(Spec)
 	status?:   #ClusterStatus     @go(Status)
@@ -44,7 +45,8 @@ import (
 
 // ClusterList contains a list of Cluster.
 #ClusterList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ClusterList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#Cluster] @go(Items,[]Cluster)
 }

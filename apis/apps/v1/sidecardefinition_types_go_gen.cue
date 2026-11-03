@@ -11,7 +11,8 @@ import (
 
 // SidecarDefinition is the Schema for the sidecardefinitions API
 #SidecarDefinition: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "SidecarDefinition"
 	metadata?: metav1.#ObjectMeta       @go(ObjectMeta)
 	spec?:     #SidecarDefinitionSpec   @go(Spec)
 	status?:   #SidecarDefinitionStatus @go(Status)
@@ -19,7 +20,8 @@ import (
 
 // SidecarDefinitionList contains a list of SidecarDefinition
 #SidecarDefinitionList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "SidecarDefinitionList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#SidecarDefinition] @go(Items,[]SidecarDefinition)
 }

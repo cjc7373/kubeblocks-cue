@@ -263,7 +263,8 @@ import (
 
 // ActionSet is the Schema for the actionsets API
 #ActionSet: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "ActionSet"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #ActionSetSpec     @go(Spec)
 	status?:   #ActionSetStatus   @go(Status)
@@ -271,7 +272,8 @@ import (
 
 // ActionSetList contains a list of ActionSet
 #ActionSetList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "ActionSetList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ActionSet] @go(Items,[]ActionSet)
 }

@@ -116,7 +116,8 @@ import (
 
 // BackupRepo is a repository for storing backup data.
 #BackupRepo: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupRepo"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #BackupRepoSpec    @go(Spec)
 	status?:   #BackupRepoStatus  @go(Status)
@@ -124,7 +125,8 @@ import (
 
 // BackupRepoList contains a list of `BackupRepo`.
 #BackupRepoList: {
-	metav1.#TypeMeta
+	apiVersion: "dataprotection.kubeblocks.io/v1alpha1"
+	kind:       "BackupRepoList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#BackupRepo] @go(Items,[]BackupRepo)
 }

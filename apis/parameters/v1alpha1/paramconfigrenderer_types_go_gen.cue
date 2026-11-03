@@ -8,7 +8,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ParamConfigRenderer is the Schema for the paramconfigrenderers API
 #ParamConfigRenderer: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ParamConfigRenderer"
 	metadata?: metav1.#ObjectMeta         @go(ObjectMeta)
 	spec?:     #ParamConfigRendererSpec   @go(Spec)
 	status?:   #ParamConfigRendererStatus @go(Status)
@@ -16,7 +17,8 @@ import metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // ParamConfigRendererList contains a list of ParamConfigRenderer
 #ParamConfigRendererList: {
-	metav1.#TypeMeta
+	apiVersion: "parameters.kubeblocks.io/v1alpha1"
+	kind:       "ParamConfigRendererList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#ParamConfigRenderer] @go(Items,[]ParamConfigRenderer)
 }

@@ -468,7 +468,8 @@ import (
 
 // InstanceSet is the Schema for the instancesets API.
 #InstanceSet: {
-	metav1.#TypeMeta
+	apiVersion: "workloads.kubeblocks.io/v1alpha1"
+	kind:       "InstanceSet"
 
 	// Contains the metadata for the particular object, such as name, namespace, labels, and annotations.
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
@@ -484,7 +485,8 @@ import (
 
 // InstanceSetList contains a list of InstanceSet
 #InstanceSetList: {
-	metav1.#TypeMeta
+	apiVersion: "workloads.kubeblocks.io/v1alpha1"
+	kind:       "InstanceSetList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#InstanceSet] @go(Items,[]InstanceSet)
 }

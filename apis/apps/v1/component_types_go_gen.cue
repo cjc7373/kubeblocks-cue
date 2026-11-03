@@ -23,7 +23,8 @@ import (
 // It is designed primarily to be used by the KubeBlocks controllers,
 // users are discouraged from modifying Component objects directly and should use them only for monitoring Component statuses.
 #Component: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "Component"
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta)
 	spec?:     #ComponentSpec     @go(Spec)
 	status?:   #ComponentStatus   @go(Status)
@@ -31,7 +32,8 @@ import (
 
 // ComponentList contains a list of Component.
 #ComponentList: {
-	metav1.#TypeMeta
+	apiVersion: "apps.kubeblocks.io/v1"
+	kind:       "ComponentList"
 	metadata?: metav1.#ListMeta @go(ListMeta)
 	items: [...#Component] @go(Items,[]Component)
 }
