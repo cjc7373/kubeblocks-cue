@@ -7,7 +7,7 @@ package v1
 import (
 	metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
 	corev1 "cue.dev/x/k8s.io/api/core/v1"
-	appsv1 "cue.dev/x/k8s.io/api/apps/v1"
+	// appsv1 "cue.dev/x/k8s.io/api/apps/v1"
 	rbacv1 "cue.dev/x/k8s.io/api/rbac/v1"
 )
 
@@ -38,16 +38,16 @@ import (
 #ComponentDefinition: {
 	apiVersion: "apps.kubeblocks.io/v1"
 	kind:       "ComponentDefinition"
-	metadata?: metav1.#ObjectMeta         @go(ObjectMeta)
-	spec?:     #ComponentDefinitionSpec   @go(Spec)
-	status?:   #ComponentDefinitionStatus @go(Status)
+	metadata?:  metav1.#ObjectMeta         @go(ObjectMeta)
+	spec?:      #ComponentDefinitionSpec   @go(Spec)
+	status?:    #ComponentDefinitionStatus @go(Status)
 }
 
 // ComponentDefinitionList contains a list of ComponentDefinition
 #ComponentDefinitionList: {
 	apiVersion: "apps.kubeblocks.io/v1"
 	kind:       "ComponentDefinitionList"
-	metadata?: metav1.#ListMeta @go(ListMeta)
+	metadata?:  metav1.#ListMeta @go(ListMeta)
 	items: [...#ComponentDefinition] @go(Items,[]ComponentDefinition)
 }
 
@@ -420,7 +420,7 @@ import (
 	//
 	// +kubebuilder:default=OrderedReady
 	// +optional
-	podManagementPolicy?: appsv1.#PodManagementPolicyType @go(PodManagementPolicy,*appsv1.PodManagementPolicyType)
+	podManagementPolicy?: string @go(PodManagementPolicy,*appsv1.PodManagementPolicyType)
 
 	// Specifies the default update policy for pods when the Component is updated.
 	//

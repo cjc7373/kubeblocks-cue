@@ -8,7 +8,7 @@ import (
 	corev1 "cue.dev/x/k8s.io/api/core/v1"
 	"cue.dev/x/k8s.io/apimachinery/pkg/util/intstr"
 	metav1 "cue.dev/x/k8s.io/apimachinery/pkg/apis/meta/v1"
-	appsv1 "cue.dev/x/k8s.io/api/apps/v1"
+	// appsv1 "cue.dev/x/k8s.io/api/apps/v1"
 )
 
 // SchedulingPolicy the scheduling policy.
@@ -318,7 +318,7 @@ import (
 	// Note: This field will be removed in future version.
 	//
 	// +optional
-	podManagementPolicy?: appsv1.#PodManagementPolicyType @go(PodManagementPolicy)
+	podManagementPolicy?: string @go(PodManagementPolicy)
 
 	// Controls the concurrency of pods during initial scale up, when replacing pods on nodes,
 	// or when scaling down. It only used when `PodManagementPolicy` is set to `Parallel`.
@@ -487,7 +487,7 @@ import (
 #InstanceSetList: {
 	apiVersion: "workloads.kubeblocks.io/v1alpha1"
 	kind:       "InstanceSetList"
-	metadata?: metav1.#ListMeta @go(ListMeta)
+	metadata?:  metav1.#ListMeta @go(ListMeta)
 	items: [...#InstanceSet] @go(Items,[]InstanceSet)
 }
 
