@@ -22,7 +22,7 @@ import (
 
 #enumPhase:
 	#AvailablePhase |
-	#UnavailablePhase
+		#UnavailablePhase
 
 // AvailablePhase indicates that a CR is in an available state.
 #AvailablePhase: #Phase & "Available"
@@ -205,7 +205,7 @@ import (
 	//
 	// +kubebuilder:pruning:PreserveUnknownFields
 	// +optional
-	accessModes?: [...corev1.#PersistentVolumeAccessMode] @go(AccessModes,[]corev1.PersistentVolumeAccessMode) @protobuf(1,bytes,rep,casttype=PersistentVolumeAccessMode)
+	accessModes?: [...string] @go(AccessModes,[]corev1.PersistentVolumeAccessMode) @protobuf(1,bytes,rep,casttype=PersistentVolumeAccessMode)
 
 	// Represents the minimum resources the volume should have.
 	// If the RecoverVolumeExpansionFailure feature is enabled, users are allowed to specify resource requirements that
@@ -262,7 +262,7 @@ import (
 
 #enumPersistentVolumeClaimRetentionPolicyType:
 	#RetainPersistentVolumeClaimRetentionPolicyType |
-	#DeletePersistentVolumeClaimRetentionPolicyType
+		#DeletePersistentVolumeClaimRetentionPolicyType
 
 // RetainPersistentVolumeClaimRetentionPolicyType is the default PersistentVolumeClaimRetentionPolicy
 // and specifies that PersistentVolumeClaims associated with VolumeClaimTemplates will not be deleted.
@@ -464,8 +464,8 @@ import (
 
 #enumLetterCase:
 	#LowerCases |
-	#UpperCases |
-	#MixedCases
+		#UpperCases |
+		#MixedCases
 
 // LowerCases represents the use of lower case letters only.
 #LowerCases: #LetterCase & "LowerCases"
@@ -546,8 +546,8 @@ import (
 
 #enumPodUpdatePolicyType:
 	#StrictInPlacePodUpdatePolicyType |
-	#PreferInPlacePodUpdatePolicyType |
-	#ReCreatePodUpdatePolicyType
+		#PreferInPlacePodUpdatePolicyType |
+		#ReCreatePodUpdatePolicyType
 
 // StrictInPlacePodUpdatePolicyType indicates that only allows in-place upgrades.
 // Any attempt to modify other fields will be rejected.
@@ -583,7 +583,7 @@ import (
 
 #enumInstanceUpdateStrategyType:
 	#RollingUpdateStrategyType |
-	#OnDeleteStrategyType
+		#OnDeleteStrategyType
 
 // RollingUpdateStrategyType indicates that update will be
 // applied to all Instances with respect to the workload
@@ -714,7 +714,7 @@ import (
 
 #enumIssuerName:
 	#IssuerKubeBlocks |
-	#IssuerUserProvided
+		#IssuerUserProvided
 
 // IssuerKubeBlocks represents certificates that are signed by the KubeBlocks Operator.
 #IssuerKubeBlocks: #IssuerName & "KubeBlocks"
@@ -822,6 +822,6 @@ import (
 
 // Ordinals represents a combination of continuous segments and individual values.
 #Ordinals: {
-	ranges?: [...#Range] @go(Ranges,[]Range)
-	discrete?: [...int32] @go(Discrete,[]int32)
+	ranges?:   [...#Range] @go(Ranges,[]Range)
+	discrete?: [...int32]  @go(Discrete,[]int32)
 }
